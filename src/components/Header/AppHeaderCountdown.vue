@@ -15,6 +15,7 @@ export default {
     }
   },
   methods: {
+    // COUNTDOWN DA RIVEDERE
     startCountdown() {
 
       this.days = Math.floor(this.difference / (1000 * 60 * 60 * 24));
@@ -148,7 +149,7 @@ p {
 }
 
 button {
-  @include ctaButton;
+  @include ctaButton ($cta-color, $light-color-two, 8px, 32px);
   margin-left: 40px;
 }
 </style>

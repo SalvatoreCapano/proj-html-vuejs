@@ -170,6 +170,7 @@ nav ul li a {
 
   span {
     margin-right: 5px;
+    font-size: 0.9rem;
   }
   .icon {
     font-size: 0.55rem;

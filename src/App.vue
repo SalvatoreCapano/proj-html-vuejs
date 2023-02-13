@@ -28,17 +28,4 @@ export default {
 
 <style lang="scss">
 @use './styles/main.scss' as *;
-
-
-// FONT
-// div {
-//   font-family: 'Rossela';
-// }
-
-// @font-face {
-//   font-family: "Rossela";
-//   src: 
-//   local("Rossela"),
-//   url(./assets/fonts/Rossela-Demo.ttf) format("truetype");
-// }
 </style>

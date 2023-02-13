@@ -23,21 +23,50 @@
 }
 
 // BUTTONS
-@mixin ctaButton {
+@mixin ctaButton ($bgColor, $textColor, $py, $px) {
     display: inline-block;
-    background-color: $cta-color;
+    background-color: $bgColor;
     border: none;
     border-radius: 6px;
 
-
     a {
         display: inline-block;
-        padding: 8px 32px;
+        padding: $py $px;
 
-        color: $light-color-two;
+        color: $textColor;
         text-decoration: none;
         text-transform: capitalize;
-        font-size: 0.70rem;
-        font-weight: 700;
+        font-size: 0.75rem;
+        font-weight: 900;
+    }
+}
+
+// TITLES
+@mixin sectionTitle {
+    color: $heading-color;
+    margin-bottom: 1rem;
+}
+
+@mixin sectionSubTitle {
+    color: $dark-color-one;
+    margin-bottom: 2.5rem;
+}
+
+// SHAPES ANIMATION
+@mixin shapesAnimation {
+    
+    @keyframes shapesAnimation {
+        0% {
+            
+        }
+        25% {
+
+        }
+        50% {
+
+        }
+        100% {
+            
+        }
     }
 }

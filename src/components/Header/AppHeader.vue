@@ -2,12 +2,14 @@
 
 import AppHeaderNavbar from './AppHeaderNavbar.vue'
 import AppHeaderCountdown from './AppHeaderCountdown.vue'
+import AppHeaderHero from './AppHeaderHero.vue'
 
 export default {
   name: 'AppHeader',
   components: {
     AppHeaderNavbar,
-    AppHeaderCountdown
+    AppHeaderCountdown,
+    AppHeaderHero
   }
 }
 </script>
@@ -21,17 +23,13 @@ export default {
 
     <!-- navbar -->
     <AppHeaderNavbar />
-
+    
     <!-- hero section -->
-    <div>hero section</div>
+    <AppHeaderHero />
 
   </header>
 
 </template>
 
 <style lang="scss" scoped>
-header {
-  background-color: bisque;
-  border: 2px solid green;
-}
 </style>

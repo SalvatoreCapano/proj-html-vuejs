@@ -34,7 +34,7 @@ export default {
         if (this.difference < 0) {
           clearInterval(countdown);
         }
-        
+
       }, 1000)
 
     }
@@ -103,9 +103,15 @@ export default {
           :
           <span>{{ calcMinutes }}</span>
           :
-          <span>{{ this.seconds }}</span>
+          <span>
+            <span v-if="(this.seconds >= 0) && (this.seconds < 10)">0</span>{{ this.seconds }}
+          </span>
 
         </div> <!-- /countdown-->
+
+        <button>
+          <a href="#">get ticket</a>
+        </button>
 
       </div> <!-- /countdownContainer-->
 
@@ -126,15 +132,23 @@ section {
 .container {
   @include flexRowCenterGap ($spacing-medium);
   @include mainContainer;
-  padding: 0.75rem 0
+  padding: 0.5rem 0
 }
-
+p {
+  color: $neutral-color-one;
+  font-size: 0.8rem
+}
 .countdownContainer {
   @include flexRowCenterGap (10px);
+  color: $dark-color-one;
 
   .countdown {
     font-weight: 700;
   }
+}
 
+button {
+  @include ctaButton;
+  margin-left: 40px;
 }
 </style>

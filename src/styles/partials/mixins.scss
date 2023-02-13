@@ -21,3 +21,23 @@
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+// BUTTONS
+@mixin ctaButton {
+    display: inline-block;
+    background-color: $cta-color;
+    border: none;
+    border-radius: 6px;
+
+
+    a {
+        display: inline-block;
+        padding: 8px 32px;
+
+        color: $light-color-two;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 0.70rem;
+        font-weight: 700;
+    }
+}

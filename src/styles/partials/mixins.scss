@@ -45,28 +45,34 @@
 @mixin sectionTitle {
     color: $heading-color;
     margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 100;
+    text-transform: capitalize;
 }
 
 @mixin sectionSubTitle {
     color: $dark-color-one;
     margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5em;
 }
 
 // SHAPES ANIMATION
-@mixin shapesAnimation {
+// @mixin shapesAnimation {
     
-    @keyframes shapesAnimation {
-        0% {
-            
-        }
-        25% {
+//     @keyframes shapesAnimation {
+//         0% {
 
-        }
-        50% {
+//         }
+//         25% {
 
-        }
-        100% {
+//         }
+//         50% {
+
+//         }
+//         100% {
             
-        }
-    }
-}
+//         }
+//     }
+// }

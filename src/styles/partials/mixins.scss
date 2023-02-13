@@ -1,0 +1,23 @@
+@use "./variables.scss" as *;
+
+// FLEX
+@mixin flexRowSpaceBtwn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexRowCenterGap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-medium;
+}
+
+// CONTAINERS
+@mixin mainContainer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}

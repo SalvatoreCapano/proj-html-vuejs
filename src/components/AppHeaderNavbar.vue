@@ -148,6 +148,16 @@ nav, .socialLinks {
       text-decoration: none;
       text-transform: capitalize;
       font-size: 1rem;
+
+      transition: 0.1s;
+
+      &:hover {
+        color: $hover-color;
+      }
+
+      &:active {
+        color: $active-color;
+      }
     }
   }
 }

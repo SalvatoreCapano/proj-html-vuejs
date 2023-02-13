@@ -1,11 +1,13 @@
 <script>
 
 import AppHeaderNavbar from './AppHeaderNavbar.vue'
+import AppHeaderCountdown from './AppHeaderCountdown.vue'
 
 export default {
   name: 'AppHeader',
   components: {
-    AppHeaderNavbar
+    AppHeaderNavbar,
+    AppHeaderCountdown
   }
 }
 </script>
@@ -15,7 +17,7 @@ export default {
   <header>
 
     <!-- countdown -->
-    <div>countdown</div>
+    <AppHeaderCountdown />
 
     <!-- navbar -->
     <AppHeaderNavbar />

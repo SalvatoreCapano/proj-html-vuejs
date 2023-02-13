@@ -75,7 +75,7 @@ export default {
       <div class="logoContainer">
 
         <a href="#">
-          <img src="../assets/images/dark-logo.png" alt="MaxCoach">
+          <img src="../../assets/images/dark-logo.png" alt="MaxCoach">
         </a>
 
       </div> <!-- /logoContainer-->
@@ -112,8 +112,8 @@ export default {
 
 
 <style lang="scss" scoped>
-@use '../styles/partials/variables.scss' as *;
-@use '../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
 
 section {
   background-color: $light-color-one;
@@ -140,7 +140,7 @@ section {
 
 nav, .socialLinks {
   ul {
-    @include flexRowCenterGap;
+    @include flexRowCenterGap ($spacing-medium);
     list-style: none;
 
     li a {

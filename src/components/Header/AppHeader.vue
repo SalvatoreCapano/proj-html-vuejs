@@ -12,17 +12,22 @@ export default {
     AppHeaderHero
   }
 }
+
 </script>
 
 <template>
 
   <header>
 
-    <!-- countdown -->
-    <AppHeaderCountdown />
+    <div class="stickyHeader">
 
-    <!-- navbar -->
-    <AppHeaderNavbar />
+      <!-- countdown -->
+      <AppHeaderCountdown />
+  
+      <!-- navbar -->
+      <AppHeaderNavbar />
+
+    </div> <!-- /stickyHeader-->
     
     <!-- hero section -->
     <AppHeaderHero />
@@ -32,4 +37,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
 </style>

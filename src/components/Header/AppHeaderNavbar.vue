@@ -121,15 +121,15 @@ section {
 .container {
   @include flexRowSpaceBtwn;
   @include mainContainer;
-  padding: 1.25rem 0
+  padding: 1rem 0
 }
 .logoContainer {
-  height: 30px;
-  padding: 2px 0;
-
+  height: 40px;
+  
   a {
     display: inline-block;
     height: 100%;
+    padding: 8px 0;
 
     img {
       max-height: 100%;

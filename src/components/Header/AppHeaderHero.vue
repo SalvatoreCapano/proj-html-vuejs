@@ -55,15 +55,15 @@ export default {
 section {
   background-color: $light-color-three;
   background-image: 
-    url(../../assets/images/heroSection/artist-hero-image-03.png),
-    url(../../assets/images/heroSection/artist-shape-03.png),
-    url(../../assets/images/heroSection/artist-shape-02.png),
-    url(../../assets/images/heroSection/artist-shape-01.png),
-    url(../../assets/images/heroSection/artist-shape-04.png),
-    url(../../assets/images/heroSection/artist-shape-05.png),
-    url(../../assets/images/maxcoach-shape-12.png),
-    url(../../assets/images/shapes/shape_01.svg),
-    url(../../assets/images/shapes/shape_02.svg);
+    url(../../assets/images/background/artist-hero-image-03.png),
+    url(../../assets/images/background/artist-shape-03.png),
+    url(../../assets/images/background/artist-shape-02.png),
+    url(../../assets/images/background/artist-shape-01.png),
+    url(../../assets/images/background/artist-shape-04.png),
+    url(../../assets/images/background/artist-shape-05.png),
+    url(../../assets/images//background/maxcoach-shape-12.png),
+    url(../../assets/images/background/shape_01.svg),
+    url(../../assets/images/background/shape_02.svg);
 
   background-position: 
     bottom 1rem left 26rem,
@@ -119,7 +119,7 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 1;
 
   .canvas {
     position: absolute;

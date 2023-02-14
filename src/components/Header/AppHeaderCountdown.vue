@@ -131,10 +131,11 @@ section {
 }
 
 .container {
-  @include flexRowCenterGap ($spacing-medium);
   @include mainContainer;
+  @include flexRowCenterGap ($spacing-medium);
   padding: 0.5rem 0
 }
+
 p {
   color: $neutral-color-one;
   font-size: $fs-xs;

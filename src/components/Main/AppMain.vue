@@ -35,6 +35,6 @@ import AppMainSectionOne from './AppMainSectionOne.vue'
 
 <style lang="scss" scoped>
 main {
-  border: 2px solid red;
+  // border: 2px solid red;
 }
 </style>

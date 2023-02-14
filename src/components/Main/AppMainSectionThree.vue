@@ -216,5 +216,11 @@ button {
   @include ctaButton($cta-color-light, $cta-color, 1rem, 2rem);
   display: block;
   margin: 0 auto;
+  &:hover {
+    a {
+      color: $light-color-one;
+    }
+    background-color: $heading-color-light;
+  }
 }
 </style>

@@ -29,6 +29,8 @@
     border: none;
     border-radius: 6px;
 
+    transition: all 0.1s;
+
     a {
         display: inline-block;
         padding: $py $px;
@@ -38,6 +40,10 @@
         text-transform: capitalize;
         font-size: 0.75rem;
         font-weight: 900;
+    }
+
+    &:hover {
+        background-color: $heading-color;
     }
 }
 

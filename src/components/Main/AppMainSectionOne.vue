@@ -128,6 +128,22 @@ export default {
 section {
   padding: 4rem 0;
 
+  background-image:
+    url(../../assets/images/background/artist-shape-01.png),
+    url(../../assets/images/background/maxcoach-shape-14.png),
+    url(../../assets/images/background/maxcoach-shape-13.png),
+    url(../../assets/images/background/shape_03.svg),
+    url(../../assets/images/background/wave.svg);
+
+  background-position:
+    top 5rem left,
+    top 5rem left,
+    top 15% right -2rem,
+    top 15% right 12rem,
+    bottom left;
+
+  background-repeat: no-repeat;
+
   .container {
     @include mainContainer;
     max-width: 1250px;
@@ -248,19 +264,18 @@ header {
 
   padding: 2rem 0;
 
-  background-image: 
+  background-image:
     url(../../assets/images/background/maxcoach-shape-05.png),
     url(../../assets/images/background/shape_01.svg),
     url(../../assets/images/background/maxcoach-shape-12.png);
 
-  background-size: 
+  background-size:
     auto, 200px, auto, 150px;
 
-  background-position: 
+  background-position:
     top left 5rem,
     top left,
-    bottom right
-  ;
+    bottom right;
 
   background-repeat: no-repeat;
 
@@ -308,6 +323,7 @@ header {
       transition: background-color 0.03s;
       cursor: pointer;
     }
+
     &:hover::before {
       background-color: rgba($color: #000000, $alpha: 0.5);
     }

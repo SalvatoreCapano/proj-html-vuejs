@@ -1,7 +1,7 @@
 <script>
 
 import AppMainSectionOne from './AppMainSectionOne.vue'
-// import AppMainSectionTwo from './AppMainSectionTwo.vue'
+import AppMainSectionTwo from './AppMainSectionTwo.vue'
 // import AppMainSectionThree from './AppMainSectionThree.vue'
 // import AppMainSectionFour from './AppMainSectionFour.vue'
 // import AppMainSectionFive from './AppMainSectionFive.vue'
@@ -11,7 +11,7 @@ import AppMainSectionOne from './AppMainSectionOne.vue'
       name: 'AppMain',
       components: {
         AppMainSectionOne,
-        // AppMainSectionTwo,
+        AppMainSectionTwo,
         // AppMainSectionThree,
         // AppMainSectionFour,
         // AppMainSectionFive
@@ -24,8 +24,10 @@ import AppMainSectionOne from './AppMainSectionOne.vue'
     
     <!-- Artist Coaching -->
     <AppMainSectionOne />
-
+    
     <!-- Testimonials -->
+    <AppMainSectionTwo />
+
     <!-- Artist Coaching Courses -->
     <!-- Articles and Tips -->
     <!-- Upcoming Events -->

@@ -1,8 +1,11 @@
 <script>
 
+import AppCarouselClick from './AppCarouselClick.vue'
+
 export default {
   name: 'AppMainSectionTwo',
   components: {
+    AppCarouselClick
   },
   data() {
     return {
@@ -27,8 +30,8 @@ export default {
       </header>
 
       <div class="carouselContainer">
-
-      </div>
+        <AppCarouselClick/>
+      </div> <!-- /carouselContainer-->
 
     </div> <!-- /container-->
   </section>
@@ -40,16 +43,16 @@ export default {
 
 section {
   padding: 4rem 0;
-  border: 2px solid red;
   background-color: $light-color-three;
   .container {
     @include mainContainer;
+    max-width: 1700px;
   }
 }
 
 header {
   text-align: center;
-
+  margin-bottom: 2.5rem;
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';

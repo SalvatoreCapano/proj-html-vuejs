@@ -152,7 +152,7 @@ section {
 
 header {
   text-align: center;
-
+  margin-bottom: 2.5rem;
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';
@@ -325,7 +325,7 @@ header {
     }
 
     &:hover::before {
-      background-color: rgba($color: #000000, $alpha: 0.5);
+      background-color: rgba($color: #000000, $alpha: 0.3);
     }
   }
 

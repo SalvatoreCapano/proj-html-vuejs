@@ -15,6 +15,14 @@ import { faTwitter, faFacebookF, faInstagram, faLinkedin } from '@fortawesome/fr
 /* add icons to the library */
 library.add(faChevronDown, faTwitter, faFacebookF, faInstagram, faLinkedin, faClock)
 
+// import Swiper JS
+import Swiper, { Navigation, Pagination } from 'swiper';
+// import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+
 createApp(App)
-.component('font-awesome-icon', FontAwesomeIcon)
-.mount('#app')
+    .component('font-awesome-icon', FontAwesomeIcon, Swiper)
+    .mount('#app')

@@ -22,13 +22,6 @@
     padding: 0 1rem;
 }
 
-// @mixin innerContainer {
-//     width: 100%;
-//     max-width: 1240px;
-//     margin: 0 auto;
-    // padding: 0 1rem;
-// }
-
 // BUTTONS
 @mixin ctaButton ($bgColor, $textColor, $py, $px) {
     display: inline-block;
@@ -59,7 +52,6 @@
 
 @mixin sectionSubTitle {
     color: $dark-color-one;
-    margin-bottom: 2.5rem;
     font-size: 1.9rem;
     font-weight: 600;
     line-height: 1.5em;

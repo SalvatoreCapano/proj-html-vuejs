@@ -2,6 +2,7 @@
 
 import AppMainSectionOne from './AppMainSectionOne.vue'
 import AppMainSectionTwo from './AppMainSectionTwo.vue'
+import AppMainSectionThree from './AppMainSectionThree.vue'
 // import AppMainSectionThree from './AppMainSectionThree.vue'
 // import AppMainSectionFour from './AppMainSectionFour.vue'
 // import AppMainSectionFive from './AppMainSectionFive.vue'
@@ -12,6 +13,7 @@ import AppMainSectionTwo from './AppMainSectionTwo.vue'
       components: {
         AppMainSectionOne,
         AppMainSectionTwo,
+        AppMainSectionThree,
         // AppMainSectionThree,
         // AppMainSectionFour,
         // AppMainSectionFive
@@ -27,8 +29,10 @@ import AppMainSectionTwo from './AppMainSectionTwo.vue'
     
     <!-- Testimonials -->
     <AppMainSectionTwo />
-
+    
     <!-- Artist Coaching Courses -->
+    <AppMainSectionThree />
+
     <!-- Articles and Tips -->
     <!-- Upcoming Events -->
 

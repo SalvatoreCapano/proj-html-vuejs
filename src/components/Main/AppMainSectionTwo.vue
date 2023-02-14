@@ -6,12 +6,6 @@ export default {
   name: 'AppMainSectionTwo',
   components: {
     AppCarouselClick
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
   }
 }
 </script>

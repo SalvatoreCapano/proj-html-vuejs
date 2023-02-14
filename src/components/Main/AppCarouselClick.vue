@@ -45,14 +45,9 @@ export default {
     const spaceBetween = 50;
     const onProgress = (e) => {
       const [swiper, progress] = e.detail;
-      // console.log(progress)
-      // console.log("Active Index", swiper.activeIndex)
-      // this.currentIndex = swiper.activeIndex;
-      // console.log('Active Index', this.currentIndex);
     };
 
     const onSlideChange = (e) => {
-      console.log('slide changed');
     }
 
     return {
@@ -66,8 +61,6 @@ export default {
       return new URL(img, import.meta.url).href;
     },
     getActiveIndex (swiper) {
-      console.log('Active Index', swiper.activeIndex)
-      // return swiper.activeIndex;
     }
   }
 }
@@ -142,6 +135,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  cursor: grab;
 
   &.swiper-slide-active {
     opacity: 1 !important;

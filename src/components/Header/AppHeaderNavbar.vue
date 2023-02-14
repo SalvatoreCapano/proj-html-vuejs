@@ -147,8 +147,6 @@ nav, .socialLinks {
       color: $dark-color-one;
       text-decoration: none;
       text-transform: capitalize;
-      font-size: 1rem;
-
       transition: 0.1s;
 
       &:hover {
@@ -170,11 +168,14 @@ nav ul li a {
 
   span {
     margin-right: 5px;
-    font-size: 0.9rem;
+    font-size: $fs-s;
   }
   .icon {
-    font-size: 0.55rem;
-
+    font-size: 0.5em;
   }
+}
+
+.socialLinks ul li a {
+  font-size: 1rem;
 }
 </style>

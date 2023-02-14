@@ -137,7 +137,7 @@ section {
 }
 p {
   color: $neutral-color-one;
-  font-size: 0.8rem
+  font-size: $fs-xs;
 }
 .countdownContainer {
   @include flexRowCenterGap (10px);

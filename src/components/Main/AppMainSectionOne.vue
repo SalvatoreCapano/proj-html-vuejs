@@ -42,6 +42,7 @@
   <section>
     <div class="container">
 
+      <!-- Headings della sezione -->
       <header>
         <h2 class="sectionTitle">artist coaching</h2>
   
@@ -51,6 +52,7 @@
         </h3>
       </header>
 
+      <!-- Container delle 4 cards -->
       <div class="cardsContainer">
 
         <div class="card" v-for="item in cardsData">
@@ -62,9 +64,48 @@
           <h5 class="title">{{ item.title }}</h5>
 
           <p class="description">{{ item.description }}</p>
+
         </div> <!-- /card-->
 
       </div> <!-- /cardsContainer-->
+
+      <!-- Citazione + CTA -->
+      <div class="ctaContainer">
+
+        <div class="quote">
+          <p>
+            I coach and mentor <br>
+            visual artists, like <br>
+            you, to Create Like <br>
+            You Mean It
+          </p>
+          <span>
+            Martin Garrix
+          </span>
+        </div>
+
+        <div class="cta">
+
+          <p>
+            As a coach and mentor, my ultimate goal is to motivate visual artists towards inspired action.
+            I help you get back on track to being the productve, creative, meaningful and authentic artist
+            you truly want to be.
+            I support artists in crafting and living a creative life as well as feeling good about themselves and their art.
+          </p>
+
+          <p>
+            As an artist and an educator for nearly 30 years, I understand what it takes to create.
+          </p>
+
+          <button class="ctaButton">
+            <a href="#">
+              Get Started Today
+            </a>
+          </button>
+
+        </div>
+
+      </div> <!-- /ctaContainer-->
 
 
     </div> <!-- /container-->
@@ -76,10 +117,11 @@
 @use '../../styles/partials/mixins.scss' as *;
 
 section {
-
   padding: 4rem 0;
+
   .container {
     @include mainContainer;
+    max-width: 1250px;
   }
 }
 
@@ -97,21 +139,20 @@ header {
 }
 
 .cardsContainer {
-  @include flexRowCenterGap(1.75rem);
-  margin-bottom: 5rem;
+  @include flexRowSpaceBtwn;
+  margin-bottom: 10rem;
 
   .card {
     flex-basis: 20%;
     align-self: flex-end;
 
-    &:nth-child(odd) {
-    }
     &:nth-child(even) {
       position: relative;
-      top: 1rem;
+      top: 1.5rem;
     }
     .imgContainer {
       margin-bottom: $spacing-small;
+
       img {
         display: block;
       }
@@ -125,8 +166,63 @@ header {
       margin-bottom: $spacing-small;
     }
     .description {
-      color: $neutral-color-one;
-      font-size: 0.85rem;
+      color: $dark-color-one;
+      font-size: 0.8rem;
+      line-height: 1.8em;
+    }
+  }
+}
+
+.ctaContainer {
+  @include flexRowSpaceBtwn;
+
+  > * {
+    width: 50%;
+  }
+
+  .quote {
+    text-align: center;
+    padding-right: 10%;
+    position: relative;
+    
+    p {
+      font-size: $fs-xxl;
+      font-weight: 600;
+      color: $dark-color-one;
+      
+      margin-bottom: 2rem;
+    }
+
+    span {
+      @include sectionTitle;
+      font-family: 'Rossela';
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 40%; //50% - padding 10%
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+
+      background-image: url(../../assets/images/mainSection/mainSectionOne/artist-quote-icon.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    } 
+  }
+
+  .cta {
+    p {
+      font-size: $fs-s;
+      color: $dark-color-one;
+      line-height: 1.8em;
+      margin-bottom: 1.5rem;
+    }
+
+    .ctaButton {
+      @include ctaButton ($cta-color-light, $cta-color, 1rem, 2rem);
     }
   }
 }

@@ -105,7 +105,7 @@ section {
 
 .sectionSubTitle {
   @include sectionSubTitle;
-  font-size: 2rem;
+  font-size: $fs-xl;
   font-weight: 700;
 }
 

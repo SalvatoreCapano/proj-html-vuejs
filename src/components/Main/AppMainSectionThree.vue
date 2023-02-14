@@ -170,6 +170,7 @@ header {
   .card {
     width: calc((100% - 4.5rem) / 4);
     flex-shrink: 0;
+    position: relative;
 
     .imgContainer {
       width: 100%;
@@ -207,6 +208,20 @@ header {
             margin-right: 20px;
           }
         }
+      }
+    }
+
+    &:hover {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: #bcbcbc35;
+        transition: all 0.05s;
       }
     }
   }

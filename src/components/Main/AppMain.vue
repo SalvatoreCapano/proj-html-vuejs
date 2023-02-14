@@ -3,8 +3,7 @@
 import AppMainSectionOne from './AppMainSectionOne.vue'
 import AppMainSectionTwo from './AppMainSectionTwo.vue'
 import AppMainSectionThree from './AppMainSectionThree.vue'
-// import AppMainSectionThree from './AppMainSectionThree.vue'
-// import AppMainSectionFour from './AppMainSectionFour.vue'
+import AppMainSectionFour from './AppMainSectionFour.vue'
 // import AppMainSectionFive from './AppMainSectionFive.vue'
 
 
@@ -14,8 +13,7 @@ import AppMainSectionThree from './AppMainSectionThree.vue'
         AppMainSectionOne,
         AppMainSectionTwo,
         AppMainSectionThree,
-        // AppMainSectionThree,
-        // AppMainSectionFour,
+        AppMainSectionFour,
         // AppMainSectionFive
       }
   }
@@ -32,8 +30,10 @@ import AppMainSectionThree from './AppMainSectionThree.vue'
     
     <!-- Artist Coaching Courses -->
     <AppMainSectionThree />
-
+    
     <!-- Articles and Tips -->
+    <AppMainSectionFour />
+
     <!-- Upcoming Events -->
 
   </main>

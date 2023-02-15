@@ -23,27 +23,32 @@
 }
 
 // BUTTONS
-@mixin ctaButton ($bgColor, $textColor, $py, $px) {
-    display: inline-block;
-    background-color: $bgColor;
+@mixin ctaButton ($bgColor, $textColor, $hoverBgColor, $hoverTextColor, $py, $px) {
     border: none;
     border-radius: 6px;
-
+    
     transition: all 0.1s;
-
+    background-color: $bgColor;
+    
     a {
         display: inline-block;
         padding: $py $px;
-
+        
         color: $textColor;
-        text-decoration: none;
-        text-transform: capitalize;
         font-size: 0.75rem;
         font-weight: 900;
+
+        text-decoration: none;
+        text-transform: capitalize;
+
+        transition: all 0.1s;
     }
 
     &:hover {
-        background-color: $heading-color;
+        background-color: $hoverBgColor;
+        a {
+            color: $hoverTextColor;
+        }
     }
 }
 
@@ -81,3 +86,9 @@
 //         }
 //     }
 // }
+
+// TEXT
+@mixin secondaryText {
+    color: $neutral-color-one;
+    font-size: $fs-xs;
+}

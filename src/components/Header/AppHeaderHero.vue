@@ -2,9 +2,6 @@
 
 export default {
   name: 'AppHeaderHero',
-  components: {
-
-  }
 }
 </script>
 
@@ -15,15 +12,17 @@ export default {
     <div class="container">
 
       <div class="textContainer">
+
         <h1 class="sectionTitle">Hello, Im Martin</h1>
 
         <h2 class="sectionSubTitle">Artist Coaching And Mentoring <br> Might Be for You.</h2>
         
-        <button>
+        <button class="ctaButton solid">
           <a href="#">
             get started today
           </a>
         </button>
+
       </div> <!-- /textContainer-->
 
       <div class="canvasContainer">
@@ -42,7 +41,7 @@ export default {
 
       </div> <!-- /canvasContainer-->
 
-    </div>
+    </div> <!-- /container-->
   </section>
 
 </template>
@@ -53,6 +52,8 @@ export default {
 @use '../../styles/partials/mixins.scss' as *;
 
 section {
+  margin-top: calc(2rem + 40px + 50px);
+
   background-color: $light-color-three;
   background-image: 
     url(../../assets/images/background/artist-hero-image-03.png),
@@ -101,16 +102,14 @@ section {
   font-family: 'Rossela';
   font-size: 3.25rem;
   font-weight: 600;
+  margin-bottom: 0.5rem
 }
 
 .sectionSubTitle {
   @include sectionSubTitle;
   font-size: $fs-xl;
   font-weight: 700;
-}
-
-button {
-  @include ctaButton ($cta-color, $light-color-two, 1rem, 2rem);
+  margin-bottom: 2rem
 }
 
 .canvasContainer {

@@ -98,7 +98,7 @@ export default {
             As an artist and an educator for nearly 30 years, I understand what it takes to create.
           </p>
 
-          <button>
+          <button class="ctaButton light">
             <a href="#">
               Get Started Today
             </a>
@@ -252,15 +252,15 @@ header {
       margin-bottom: 1.75rem;
     }
 
-    button {
-      @include ctaButton ($cta-color-light, $cta-color, 1rem, 2rem);
-      &:hover {
-        a {
-          color: $light-color-one;
-        }
-        background-color: $heading-color-light;
-      }
-    }
+    // button {
+    //   @include ctaButton ($cta-color-light, $cta-color, 1rem, 2rem);
+    //   &:hover {
+    //     a {
+    //       color: $light-color-one;
+    //     }
+    //     background-color: $heading-color-light;
+    //   }
+    // }
   }
 }
 

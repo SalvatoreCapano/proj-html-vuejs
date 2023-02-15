@@ -38,9 +38,11 @@ export default {
 
 <style lang="scss" scoped>
 .stickyHeader {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 20;
+
+  width: 100%;
 }
 </style>

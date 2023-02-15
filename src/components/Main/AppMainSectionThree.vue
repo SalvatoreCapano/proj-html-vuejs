@@ -126,8 +126,8 @@ export default {
 
       </div> <!-- /cardsContainer-->
 
-      <button>
-        <a href="#">
+      <button class="ctaButton light">
+        <a href="##">
           View all courses
           <font-awesome-icon icon="fa-solid fa-arrow-right" />
         </a>
@@ -246,14 +246,14 @@ header {
 }
 
 button {
-  @include ctaButton($cta-color-light, $cta-color, 1rem, 2rem);
+  // @include ctaButton($cta-color-light, $cta-color, 1rem, 2rem);
   display: block;
   margin: 0 auto;
   &:hover {
     a {
-      color: $light-color-one;
+      // color: $light-color-one;
     }
-    background-color: $heading-color-light;
+    // background-color: $heading-color-light;
   }
 }
 </style>

@@ -122,6 +122,12 @@ export default {
       </div>
 
     </section>
+    
+    <button class="returnTopBtn">
+      <a href="#">
+        <font-awesome-icon icon="fa-solid fa-arrow-up-long" />
+      </a>
+    </button>
 
   </footer>
 </template>
@@ -131,6 +137,10 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
+footer {
+  position: relative;
+
+}
 .listsSection {
   padding: 5rem 0 3rem;
 
@@ -197,5 +207,30 @@ export default {
   text-align: center;
   font-size: $fs-xs;
   color: $neutral-color-one;
+}
+
+.returnTopBtn {
+
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  
+  a {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    // padding: 10px;
+    background-color: $cta-color;
+
+    text-align: center;
+    line-height: 60px;
+    color: $light-color-one;
+    font-size: 1.5rem;
+
+
+    border-radius: 50%;
+  }
 }
 </style>

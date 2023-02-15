@@ -15,7 +15,7 @@ export default {
       <form @submit.prevent="">
         <div class="inputContainer">
           <input type="mail" placeholder="Your e-mail">
-          <font-awesome-icon icon="fa-solid fa-arrow-right" class="icon" />
+          <font-awesome-icon icon="fa-solid fa-arrow-right-long" class="icon" />
         </div>
       </form>
 

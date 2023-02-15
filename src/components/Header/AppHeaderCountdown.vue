@@ -105,12 +105,13 @@ export default {
           <span>{{ calcMinutes }}</span>
           :
           <span>
-            <span v-if="(this.seconds >= 0) && (this.seconds < 10)">0</span>{{ this.seconds }}
+            <span v-if="(this.seconds >= 0) && (this.seconds < 10)">0</span>
+            {{ this.seconds }}
           </span>
 
         </div> <!-- /countdown-->
 
-        <button>
+        <button class="ctaButton solid">
           <a href="#">get ticket</a>
         </button>
 
@@ -137,8 +138,7 @@ section {
 }
 
 p {
-  color: $neutral-color-one;
-  font-size: $fs-xs;
+  @include secondaryText;
 }
 .countdownContainer {
   @include flexRowCenterGap (10px);
@@ -149,8 +149,10 @@ p {
   }
 }
 
-button {
-  @include ctaButton ($cta-color, $light-color-two, 8px, 32px);
+.ctaButton {
   margin-left: 40px;
+  a {
+    padding: 8px 32px !important;
+  }
 }
 </style>

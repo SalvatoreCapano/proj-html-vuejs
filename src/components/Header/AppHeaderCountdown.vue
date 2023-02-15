@@ -92,7 +92,7 @@ export default {
 <template>
 
   <section>
-    <div class="container">
+    <div class="container small">
 
       <p>Starts TOMORROW! Our biggest event of the year...</p>
 
@@ -134,7 +134,6 @@ section {
 }
 
 .container {
-  @include mainContainer;
   @include flexRowCenterGap ($spacing-medium);
   padding: 0.5rem 0
 }

@@ -39,7 +39,7 @@ section {
   padding: 4rem 0;
   background-color: $light-color-three;
   .container {
-    @include mainContainer;
+    @include mainContainer ($mainContainerWidth);
     max-width: 1700px;
   }
 }

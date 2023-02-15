@@ -41,7 +41,4 @@ import AppMainSectionFive from './AppMainSectionFive.vue'
 </template>
 
 <style lang="scss" scoped>
-// main {
-//   border: 2px solid red;
-// }
 </style>

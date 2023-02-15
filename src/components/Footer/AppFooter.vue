@@ -86,7 +86,7 @@ export default {
     <!-- Sezione links -->
     <section class="listsSection">
 
-      <div class="container">
+      <div class="container large">
 
         <AppList v-for="list in footerListsData" :list="list" />
 
@@ -136,14 +136,12 @@ export default {
 
 footer {
   position: relative;
-
 }
 
 .listsSection {
   padding: 5rem 0 3rem;
 
   .container {
-    @include mainContainer;
     @include flexRowSpaceBtwn;
     align-items: flex-start;
 

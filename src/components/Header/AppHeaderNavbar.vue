@@ -1,6 +1,5 @@
 <script>
 
-
 export default {
   name: 'AppHeaderNavbar',
   data() {
@@ -59,7 +58,7 @@ export default {
         {
           name: 'linkedin',
           link: 'https://www.linkedin.com/'
-        },
+        }
       ]
     }
   }
@@ -70,7 +69,7 @@ export default {
 <template>
 
   <section>
-    <div class="container">
+    <div class="container large">
 
       <div class="logoContainer">
 
@@ -120,8 +119,7 @@ section {
 }
 .container {
   @include flexRowSpaceBtwn;
-  @include mainContainer;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .logoContainer {
   height: 40px;

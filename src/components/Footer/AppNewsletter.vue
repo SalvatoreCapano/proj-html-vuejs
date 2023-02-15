@@ -8,7 +8,7 @@ export default {
 
 <template>
   <section>
-    <div class="container">
+    <div class="container small">
 
       <h4>Newsletter to get in touch</h4>
 
@@ -41,10 +41,7 @@ section {
   background-repeat: no-repeat;
 
   .container {
-    @include mainContainer;
     @include flexRowCenterGap(8rem);
-    max-width: 1250px;
-    padding: 0 2rem;
   }
 }
 

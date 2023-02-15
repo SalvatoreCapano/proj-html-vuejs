@@ -24,3 +24,13 @@ body {
         local("Rossela"),
         url(./assets/fonts/Rossela-Demo.ttf) format("truetype");
 }
+
+.container {
+    &.small {
+        @include mainContainer ($mainContainerWidthSmall);
+    }
+
+    &.large {
+        @include mainContainer ($mainContainerWidth);
+    }
+}

@@ -40,7 +40,7 @@ export default {
 
 <template>
   <section>
-    <div class="container">
+    <div class="container small">
 
       <!-- Headings della sezione -->
       <header>
@@ -137,11 +137,6 @@ section {
     bottom left;
 
   background-repeat: no-repeat;
-
-  .container {
-    @include mainContainer;
-    max-width: 1250px;
-  }
 }
 
 header {
@@ -165,7 +160,9 @@ header {
   .card {
     flex-basis: 25%;
     align-self: flex-end;
-    padding-right: 1rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
 
     &:nth-child(even) {
       position: relative;

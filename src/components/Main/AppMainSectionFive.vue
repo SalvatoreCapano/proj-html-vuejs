@@ -42,7 +42,7 @@ export default {
 
 <template>
   <section>
-    <div class="container">
+    <div class="container small">
 
       <!-- Headings della sezione -->
       <header>
@@ -132,9 +132,6 @@ section {
   }
 
   .container {
-    @include mainContainer;
-    max-width: 1250px;
-
     padding: 0;
   }
 }

@@ -79,20 +79,25 @@ section {
     bottom 2rem right 23rem;
 
   background-size: auto, auto, auto, auto, auto, auto, auto, 500px, 200px;
-
   background-repeat: no-repeat;
 }
 
 .container {
   @include flexRowSpaceBtwn;
-  @include mainContainer;
-  padding: 1.25rem 0;
+  @include mainContainer ($mainContainerWidth);
+  // padding: 1.25rem 0;
   position: relative;
+  height: 75vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .textContainer {
     text-align: center;
-    margin: 0 auto;
-    padding: 12rem 0;
+    // margin: 0 auto;
+    
+    // padding: 12rem 0;
 
     isolation: isolate;
     z-index: 2;

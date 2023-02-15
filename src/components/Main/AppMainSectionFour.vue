@@ -12,7 +12,7 @@ export default {
 
 <template>
   <section>
-    <div class="container">
+    <div class="container small">
 
       <!-- Headings della sezione -->
       <header>
@@ -65,10 +65,6 @@ section {
   background-size: auto, 100px, 250px, auto;
 
   background-repeat: no-repeat;
-  .container {
-    @include mainContainer;
-    max-width: 1700px;
-  }
 }
 
 header {

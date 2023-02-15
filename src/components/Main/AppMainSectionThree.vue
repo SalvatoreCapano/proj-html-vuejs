@@ -76,7 +76,7 @@ export default {
 
 <template>
   <section>
-    <div class="container">
+    <div class="container large">
 
       <!-- Headings della sezione -->
       <header>
@@ -151,10 +151,6 @@ section {
     color: transparent;
 
     -webkit-text-stroke: 3px $light-color-four;
-  }
-
-  .container {
-    @include mainContainer;
   }
 }
 

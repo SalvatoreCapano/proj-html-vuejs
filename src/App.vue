@@ -32,5 +32,7 @@ export default {
 
 <style lang="scss">
 @use './styles/main.scss' as *;
-
+.wrapper {
+  // padding: 0 1rem;
+}
 </style>

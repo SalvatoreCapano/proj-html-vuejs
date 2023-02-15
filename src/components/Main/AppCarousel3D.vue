@@ -58,15 +58,15 @@ export default {
 
 <template>
 
-  <!-- :navigation="true"  -->
+  <!-- :freeMode="true" -->
   <swiper-container 
-    :rewind="true" 
     :loop="true" 
+    :rewind="true" 
+    :slides-per-view="3" 
     :autoplay="{
       delay: 4000,
       disableOnInteraction: false,
     }" 
-    :slides-per-view="3" 
     :space-between="spaceBetween" 
     :centered-slides="true" 
     :breakpoints="{
@@ -107,7 +107,6 @@ export default {
         </div> <!-- /infoContainer-->
       </div> <!-- /slideInner-->
 
-
     </swiper-slide>
 
   </swiper-container>
@@ -119,14 +118,9 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
-.swiper-initialized {
-  height: 700px;
-}
-
 // Slides standard
 .slide {
   padding: 0 6.5rem;
-
   cursor: grab;
 
   .slideInner {
@@ -178,10 +172,11 @@ export default {
 // Slides active
 .slide.swiper-slide-active {
   padding: 0;
+  flex-grow: 1;
 
   .slideInner {
     height: 700px;
-    width: 520px !important;
+    width: 100%;
     position: relative;
 
     .imgContainer {
@@ -232,9 +227,16 @@ export default {
 
 .swiper-slide-prev {
   transform: translateY(150px);
+  flex-basis: 30%;
+  padding-right: 1rem;
+  padding-left: 0;
 }
 
 .swiper-slide-next {
   transform: translateY(40px);
+  flex-basis: 30%;
+  padding-left: 1rem;
+  padding-right: 0;
+  margin-right: 0 !important;
 }
 </style>

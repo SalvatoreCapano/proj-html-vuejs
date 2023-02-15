@@ -2,10 +2,13 @@
 import { register } from 'swiper/element/bundle';
 register();
 
+import AppImageContainer from '../AppImageContainer.vue'
+
 export default {
 
   name: 'AppCarouselClick',
   components: {
+    AppImageContainer
   },
   data() {
     return {
@@ -55,13 +58,6 @@ export default {
       onProgress,
       onSlideChange,
     };
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(img, import.meta.url).href;
-    },
-    getActiveIndex (swiper) {
-    }
   }
 }
 </script>
@@ -72,25 +68,16 @@ export default {
   <!-- :rewind="true" -->
   <!-- :loop="true" -->
   <!-- :navigation="true"  -->
-  <swiper-container 
-    :effect="coverflow"
-    :coverflowEffect="{
-      rotate: 0,
-      slideShadows: true
-    }"
-    :slides-per-view="3" 
-    :space-between="spaceBetween" 
-    :centered-slides="true" 
-    :pagination="{
-      clickable: true,
-    }"
-    :breakpoints="{
-      768: {
-        slidesPerView: 3,
-      },
-    }" 
-    @progress="onProgress" 
-    @slidechange="onSlideChange">
+  <swiper-container :effect="coverflow" :coverflowEffect="{
+    rotate: 0,
+    slideShadows: true
+  }" :slides-per-view="3" :space-between="spaceBetween" :centered-slides="true" :pagination="{
+  clickable: true,
+}" :breakpoints="{
+  768: {
+    slidesPerView: 3,
+  },
+}" @progress="onProgress" @slidechange="onSlideChange">
     <swiper-slide v-for="item in testimonialsData" class="slide">
 
       <header>
@@ -101,9 +88,7 @@ export default {
 
       <div class="testimonialData">
 
-        <div class="imgContainer">
-          <img :src="getImagePath(`../../assets/images/testimonials/${item.pictureUrl}`)" :alt="item.name">
-        </div> <!-- /imgContainer -->
+        <AppImageContainer :imgUrl="`../../src/assets/images/testimonials/${item.pictureUrl}`" />
 
         <div class="textContainer">
 
@@ -123,7 +108,6 @@ export default {
 <style lang="scss" scoped>
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
-
 
 .slide {
   height: 420px;
@@ -162,16 +146,11 @@ export default {
     justify-content: flex-start;
 
     .imgContainer {
+      @include imageContainer;
       width: 75px;
       height: 75px;
       border-radius: 50%;
       overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     .textContainer {
@@ -180,6 +159,7 @@ export default {
         color: $dark-color-one;
         margin-bottom: 0.75rem;
       }
+
       .role {
         font-size: $fs-s;
         color: $neutral-color-one;

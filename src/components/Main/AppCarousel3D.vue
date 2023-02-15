@@ -2,10 +2,13 @@
 import { register } from 'swiper/element/bundle';
 register();
 
+import AppImageContainer from '../AppImageContainer.vue'
+
 export default {
 
   name: 'AppCarousel3D',
   components: {
+    AppImageContainer
   },
   data() {
     return {
@@ -48,11 +51,6 @@ export default {
       onProgress,
       onSlideChange
     };
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(img, import.meta.url).href;
-    }
   }
 }
 </script>
@@ -62,28 +60,27 @@ export default {
 
   <!-- :navigation="true"  -->
   <swiper-container 
-    :rewind="true"
-    :loop="true"
+    :rewind="true" 
+    :loop="true" 
     :autoplay="{
       delay: 4000,
       disableOnInteraction: false,
-    }"
+    }" 
     :slides-per-view="3" 
     :space-between="spaceBetween" 
-    :centered-slides="true"
+    :centered-slides="true" 
     :breakpoints="{
       768: {
         slidesPerView: 3,
       },
-    }" 
+    }"
     @progress="onProgress" 
     @slidechange="onSlideChange">
     <swiper-slide v-for="item in blogsData" class="slide">
 
       <div class="slideInner">
-        <div class="imgContainer">
-          <img :src="getImagePath(`../../assets/images/blog/${item.imgUrl}`)" :alt="item.title">
-        </div> <!-- /imgContainer -->
+
+        <AppImageContainer :imgUrl="`../../src/assets/images/blog/${item.imgUrl}`" />
 
         <div class="infoContainer">
 
@@ -125,9 +122,9 @@ export default {
 .swiper-initialized {
   height: 700px;
 }
+
 // Slides standard
 .slide {
-  // width: 300px !important;
   padding: 0 6.5rem;
 
   cursor: grab;
@@ -139,15 +136,8 @@ export default {
   }
 
   .imgContainer {
+    @include imageContainer;
     height: 55%;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
   }
 
   .infoContainer {
@@ -168,7 +158,7 @@ export default {
       margin-bottom: 1.25rem;
     }
 
-    > div:last-child {
+    >div:last-child {
       span {
         font-size: $fs-xs;
         color: $neutral-color-one;
@@ -216,8 +206,8 @@ export default {
         left: 0;
         right: 0;
 
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,0.9009804605435925) 0%, rgba(255,255,255,0) 100%); 
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9009804605435925) 0%, rgba(255, 255, 255, 0) 100%);
         z-index: -1;
       }
 

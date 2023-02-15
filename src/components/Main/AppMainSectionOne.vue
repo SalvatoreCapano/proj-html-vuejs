@@ -1,11 +1,13 @@
 <script>
 
 import AppCTAButton from '../AppCTAButton.vue'
+import AppImageContainer from '../AppImageContainer.vue'
 
 export default {
   name: 'AppMainSectionOne',
   components: {
-    AppCTAButton
+    AppCTAButton,
+    AppImageContainer
   },
   data() {
     return {
@@ -32,11 +34,6 @@ export default {
         },
       ]
     }
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(img, import.meta.url).href;
-    }
   }
 }
 </script>
@@ -60,9 +57,7 @@ export default {
 
         <div class="card" v-for="item in cardsData">
 
-          <div class="imgContainer">
-            <img :src="getImagePath(`../../assets/images/mainSection/mainSectionOne/${item.imgUrl}`)" alt="">
-          </div>
+          <AppImageContainer :imgUrl="`../../src/assets/images/mainSection/mainSectionOne/${item.imgUrl}`" />
 
           <h5 class="title">{{ item.title }}</h5>
 
@@ -179,10 +174,7 @@ header {
 
     .imgContainer {
       margin-bottom: $spacing-small;
-
-      img {
-        display: block;
-      }
+      max-width: 130px;
     }
 
     .title {

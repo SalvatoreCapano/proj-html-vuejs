@@ -2,12 +2,14 @@
 
 import AppNewsletter from './AppNewsletter.vue'
 import AppList from './AppList.vue'
+import AppImageContainer from '../AppImageContainer.vue'
 
 export default {
   name: 'AppFooter',
   components: {
     AppNewsletter,
     AppList,
+    AppImageContainer
   },
   data() {
     return {
@@ -58,23 +60,18 @@ export default {
       ],
       instagramData: [
         {
-          imgUrl: '../../assets/images/blog/artist-blog-03-480x356.jpeg',
+          imgUrl: 'blog/artist-blog-03-480x356.jpeg',
           link: 'https://www.instagram.com/'
         },
         {
-          imgUrl: '../../assets/images/events/artist-event-03-250x300.jpg',
+          imgUrl: 'events/artist-event-03-250x300.jpg',
           link: 'https://www.instagram.com/'
         },
         {
-          imgUrl: '../../assets/images/events/artist-event-02-250x300.jpg',
+          imgUrl: 'events/artist-event-02-250x300.jpg',
           link: 'https://www.instagram.com/'
         },
       ]
-    }
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(img, import.meta.url).href;
     }
   }
 }
@@ -105,9 +102,9 @@ export default {
 
             <li v-for="item in instagramData">
               <a :href="item.link" target="_blank">
-                <div class="imgContainer">
-                  <img :src="getImagePath(item.imgUrl)" alt="">
-                </div>
+
+                <AppImageContainer :imgUrl="`../../src/assets/images/${item.imgUrl}`" />
+
               </a>
             </li>
 
@@ -118,11 +115,11 @@ export default {
       </div>
 
       <div class="rights">
-        &#169; 2020 MaxCoach. All Rigths Reserved
+        &#169; 2020 MaxCoach. All Rights Reserved
       </div>
 
     </section>
-    
+
     <button class="returnTopBtn">
       <a href="#">
         <font-awesome-icon icon="fa-solid fa-arrow-up-long" />
@@ -141,6 +138,7 @@ footer {
   position: relative;
 
 }
+
 .listsSection {
   padding: 5rem 0 3rem;
 
@@ -189,14 +187,9 @@ footer {
         transition: color 0.1s;
 
         .imgContainer {
+          @include imageContainer;
           width: 130px;
           height: 130px;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
         }
       }
     }
@@ -216,7 +209,7 @@ footer {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  
+
   a {
     display: inline-block;
     height: 60px;

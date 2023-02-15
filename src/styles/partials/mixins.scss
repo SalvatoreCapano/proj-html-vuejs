@@ -22,18 +22,31 @@
     padding: 0 1rem;
 }
 
+@mixin imageContainer {
+
+    width: 100%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+}
+
 // BUTTONS
 @mixin ctaButton ($bgColor, $textColor, $hoverBgColor, $hoverTextColor, $py, $px) {
     border: none;
     border-radius: 6px;
-    
+
     transition: all 0.1s;
     background-color: $bgColor;
-    
+
     a {
         display: inline-block;
         padding: $py $px;
-        
+
         color: $textColor;
         font-size: 0.75rem;
         font-weight: 900;
@@ -46,6 +59,7 @@
 
     &:hover {
         background-color: $hoverBgColor;
+
         a {
             color: $hoverTextColor;
         }
@@ -70,7 +84,7 @@
 
 // SHAPES ANIMATION
 // @mixin shapesAnimation {
-    
+
 //     @keyframes shapesAnimation {
 //         0% {
 
@@ -82,7 +96,7 @@
 
 //         }
 //         100% {
-            
+
 //         }
 //     }
 // }

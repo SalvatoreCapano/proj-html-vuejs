@@ -1,8 +1,11 @@
 <script>
 
+import AppImageContainer from '../AppImageContainer.vue'
+
 export default {
   name: 'AppMainSectionFive',
   components: {
+    AppImageContainer
   },
   data() {
     return {
@@ -33,11 +36,6 @@ export default {
         },
       ]
     }
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(img, import.meta.url).href;
-    }
   }
 }
 </script>
@@ -59,9 +57,7 @@ export default {
 
         <div class="card" v-for="item in eventsData">
 
-          <div class="imgContainer">
-            <img :src="getImagePath(`../../assets/images/events/${item.imgUrl}`)" :alt="item.title">
-          </div>
+          <AppImageContainer :imgUrl="`../../src/assets/images/events/${item.imgUrl}`" />
 
           <div class="infoContainer">
             <div class="date">
@@ -73,7 +69,7 @@ export default {
             </div>
 
             <div class="location">
-              <font-awesome-icon icon="fa-solid fa-location-dot" class="icon"/>
+              <font-awesome-icon icon="fa-solid fa-location-dot" class="icon" />
               <span>
                 {{ item.location }}
               </span>
@@ -97,14 +93,11 @@ section {
   background-color: $light-color-one;
   position: relative;
 
-  background-image: 
+  background-image:
     url(../../assets/images/background/artist-shape-01.png),
     url(../../assets/images/background/maxcoach-shape-13.png);
-
   background-position: top 40% right;
-
   background-size: 300px, 200px;
-
   background-repeat: no-repeat;
 
   &::before {
@@ -137,6 +130,7 @@ section {
     background-image: url(../../assets/images/background/artist-shape-02.png);
     background-repeat: no-repeat
   }
+
   .container {
     @include mainContainer;
     max-width: 1250px;
@@ -148,6 +142,7 @@ section {
 header {
   text-align: center;
   margin-bottom: 4.5rem;
+
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';
@@ -172,13 +167,9 @@ header {
   align-items: center;
 
   .imgContainer {
+    @include imageContainer;
+    width: unset;
     height: 100%;
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   .infoContainer {
@@ -197,15 +188,15 @@ header {
       font-size: $fs-md;
       font-weight: 600;
       margin-bottom: 1.5rem;
-
     }
 
     .location {
       color: $neutral-color-one;
       font-size: $fs-xs;
-        .icon {
-          margin-right: 5px;
-        }
+
+      .icon {
+        margin-right: 5px;
+      }
     }
   }
 }

@@ -10,16 +10,6 @@ export default {
     AppHeader,
     AppMain,
     AppFooter
-  },
-  methods: {
-    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
-      if (scrollTop + clientHeight >= scrollHeight) {
-        // now you can: 1 - call code to load more content
-        // 2 - display notification or popup
-        // 3 - etc etc...
-        console.log ("SCROLLATO");
-      }
-    }
   }
 };
 </script>
@@ -42,7 +32,5 @@ export default {
 
 <style lang="scss">
 @use './styles/main.scss' as *;
-.wrapper {
-  // overflow-y: scroll;
-}
+
 </style>

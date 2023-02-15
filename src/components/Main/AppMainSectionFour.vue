@@ -1,11 +1,13 @@
 <script>
 
 import AppCarousel3D from './AppCarousel3D.vue'
+import AppSectionHeading from '../AppSectionHeading.vue'
 
 export default {
   name: 'AppMainSectionFour',
   components: {
-    AppCarousel3D
+    AppCarousel3D,
+    AppSectionHeading
   }
 }
 </script>
@@ -15,13 +17,9 @@ export default {
     <div class="container small">
 
       <!-- Headings della sezione -->
-      <header>
-        <h2 class="sectionTitle">articles and tips</h2>
-
-        <h3 class="sectionSubTitle">
-          Latest from the Blog
-        </h3>
-      </header>
+      <AppSectionHeading 
+        :title="'articles and tips'" 
+        :subtitle="'Latest from the Blog'"/>
 
       <div class="carouselContainer">
         <AppCarousel3D/>

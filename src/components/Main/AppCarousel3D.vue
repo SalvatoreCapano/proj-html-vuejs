@@ -118,6 +118,9 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
+.swiper-initialized {
+  height: 700px;
+}
 // Slides standard
 .slide {
   padding: 0 6.5rem;

@@ -2,12 +2,14 @@
 
 import AppCTAButton from '../AppCTAButton.vue'
 import AppImageContainer from '../AppImageContainer.vue'
+import AppSectionHeading from '../AppSectionHeading.vue'
 
 export default {
   name: 'AppMainSectionOne',
   components: {
     AppCTAButton,
-    AppImageContainer
+    AppImageContainer,
+    AppSectionHeading
   },
   data() {
     return {
@@ -43,14 +45,9 @@ export default {
     <div class="container small">
 
       <!-- Headings della sezione -->
-      <header>
-        <h2 class="sectionTitle">artist coaching</h2>
-
-        <h3 class="sectionSubTitle">
-          I understand what it takes to create. <br>
-          I can help you with:
-        </h3>
-      </header>
+      <AppSectionHeading 
+        :title="'artist coaching'" 
+        :subtitle="'I understand what it takes to create. I can help you with:'"/>
 
       <!-- Container delle 4 cards -->
       <div class="cardsContainer">
@@ -139,19 +136,6 @@ section {
   background-repeat: no-repeat;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-
-  .sectionTitle {
-    @include sectionTitle;
-    font-family: 'Rossela';
-  }
-
-  .sectionSubTitle {
-    @include sectionSubTitle;
-  }
-}
 
 .cardsContainer {
   @include flexRowSpaceBtwn;

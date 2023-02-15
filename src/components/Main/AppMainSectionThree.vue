@@ -2,12 +2,14 @@
 
 import AppCTAButton from '../AppCTAButton.vue'
 import AppImageContainer from '../AppImageContainer.vue'
+import AppSectionHeading from '../AppSectionHeading.vue'
 
 export default {
   name: 'AppMainSectionThree',
   components: {
     AppCTAButton,
-    AppImageContainer
+    AppImageContainer,
+    AppSectionHeading
   },
   data() {
     return {
@@ -78,14 +80,9 @@ export default {
   <section>
     <div class="container large">
 
-      <!-- Headings della sezione -->
-      <header>
-        <h2 class="sectionTitle">artist coaching</h2>
-
-        <h3 class="sectionSubTitle">
-          Latest online courses
-        </h3>
-      </header>
+      <AppSectionHeading 
+        :title="'artist coaching'" 
+        :subtitle="'Latest online courses'"/>
 
       <div class="cardsContainer">
 

@@ -1,11 +1,13 @@
 <script>
 
 import AppCarouselClick from './AppCarouselClick.vue'
+import AppSectionHeading from '../AppSectionHeading.vue'
 
 export default {
   name: 'AppMainSectionTwo',
   components: {
-    AppCarouselClick
+    AppCarouselClick,
+    AppSectionHeading
   }
 }
 </script>
@@ -15,13 +17,9 @@ export default {
     <div class="container">
 
       <!-- Headings della sezione -->
-      <header>
-        <h2 class="sectionTitle">testimonials</h2>
-
-        <h3 class="sectionSubTitle">
-          Why do people love me?
-        </h3>
-      </header>
+      <AppSectionHeading 
+        :title="'testimonials'" 
+        :subtitle="'Why do people love me?'"/>
 
       <div class="carouselContainer">
         <AppCarouselClick/>

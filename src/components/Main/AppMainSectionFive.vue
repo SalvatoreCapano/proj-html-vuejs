@@ -1,11 +1,13 @@
 <script>
 
 import AppImageContainer from '../AppImageContainer.vue'
+import AppSectionHeading from '../AppSectionHeading.vue'
 
 export default {
   name: 'AppMainSectionFive',
   components: {
-    AppImageContainer
+    AppImageContainer,
+    AppSectionHeading
   },
   data() {
     return {
@@ -45,13 +47,9 @@ export default {
     <div class="container small">
 
       <!-- Headings della sezione -->
-      <header>
-        <h2 class="sectionTitle">upcoming events</h2>
-
-        <h3 class="sectionSubTitle">
-          Let's Work Together
-        </h3>
-      </header>
+      <AppSectionHeading 
+        :title="'upcoming events'" 
+        :subtitle="`Let's Work Together`"/>
 
       <div class="cardsContainer">
 

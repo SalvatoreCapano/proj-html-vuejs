@@ -144,6 +144,24 @@ export default {
 section {
   padding: 4rem 0 5rem;
   background-color: $light-color-one;
+
+  position: relative;
+
+  &::before {
+    content: 'courses';
+
+    position: absolute;
+    top: 35rem;
+    right: -15rem;
+    transform: rotate(90deg);
+
+    font-size: 9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: transparent;
+
+    -webkit-text-stroke: 3px $light-color-four;
+  }
   .container {
     @include mainContainer;
   }

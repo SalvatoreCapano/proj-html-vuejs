@@ -4,7 +4,7 @@ import AppMainSectionOne from './AppMainSectionOne.vue'
 import AppMainSectionTwo from './AppMainSectionTwo.vue'
 import AppMainSectionThree from './AppMainSectionThree.vue'
 import AppMainSectionFour from './AppMainSectionFour.vue'
-// import AppMainSectionFive from './AppMainSectionFive.vue'
+import AppMainSectionFive from './AppMainSectionFive.vue'
 
 
   export default {
@@ -14,7 +14,7 @@ import AppMainSectionFour from './AppMainSectionFour.vue'
         AppMainSectionTwo,
         AppMainSectionThree,
         AppMainSectionFour,
-        // AppMainSectionFive
+        AppMainSectionFive
       }
   }
 </script>
@@ -33,8 +33,9 @@ import AppMainSectionFour from './AppMainSectionFour.vue'
     
     <!-- Articles and Tips -->
     <AppMainSectionFour />
-
+    
     <!-- Upcoming Events -->
+    <AppMainSectionFive />
 
   </main>
 </template>

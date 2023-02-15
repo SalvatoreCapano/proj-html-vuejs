@@ -58,7 +58,7 @@ section {
 
   background-position: 
     top 5rem left,
-    top 5rem left 15rem,
+    top 15rem left 15rem,
     bottom 3rem right 35rem,
     top 12rem left 37rem;
 
@@ -73,7 +73,7 @@ section {
 
 header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4.5rem;
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';
@@ -95,8 +95,14 @@ header {
 
   text-align: center;
 
+  
   a {
     color: $cta-color;
+    transition: color 0.1s;
+
+    &:hover {
+      color: $heading-color-light;
+    }
   }
 }
 </style>

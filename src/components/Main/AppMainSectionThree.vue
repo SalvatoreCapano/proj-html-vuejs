@@ -1,11 +1,11 @@
 <script>
 
-// import AppCarouselClick from './AppCarouselClick.vue'
+import AppCTAButton from '../AppCTAButton.vue'
 
 export default {
   name: 'AppMainSectionThree',
   components: {
-    // AppCarouselClick
+    AppCTAButton
   },
   data() {
     return {
@@ -95,7 +95,8 @@ export default {
         <div class="card" v-for="item in coursesData">
 
           <div class="imgContainer">
-            <img :src="getImagePath(`../../assets/images/mainSection/mainSectionThree/${item.imgUrl}`)" :alt="item.title">
+            <img :src="getImagePath(`../../assets/images/mainSection/mainSectionThree/${item.imgUrl}`)"
+              :alt="item.title">
           </div> <!-- /imgContainer -->
 
           <div class="infoContainer">
@@ -110,12 +111,12 @@ export default {
 
             <div>
               <span>
-                <font-awesome-icon icon="fa-regular fa-file-lines" class="icon"/>
+                <font-awesome-icon icon="fa-regular fa-file-lines" class="icon" />
                 {{ item.lessons }} lessons
               </span>
 
               <span>
-                <font-awesome-icon icon="fa-regular fa-user" class="icon"/>
+                <font-awesome-icon icon="fa-regular fa-user" class="icon" />
                 {{ item.currentStudents }} Students
               </span>
             </div>
@@ -126,12 +127,7 @@ export default {
 
       </div> <!-- /cardsContainer-->
 
-      <button class="ctaButton light">
-        <a href="##">
-          View all courses
-          <font-awesome-icon icon="fa-solid fa-arrow-right" />
-        </a>
-      </button>
+      <AppCTAButton :text="'view all courses'" :icon="'arrow-right'" :type="'light'"/>
 
     </div> <!-- /container-->
   </section>
@@ -162,6 +158,7 @@ section {
 
     -webkit-text-stroke: 3px $light-color-four;
   }
+
   .container {
     @include mainContainer;
   }
@@ -170,6 +167,7 @@ section {
 header {
   text-align: center;
   margin-bottom: 2.5rem;
+
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';
@@ -185,6 +183,7 @@ header {
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 2rem;
+
   .card {
     width: calc((100% - 4.5rem) / 4);
     flex-shrink: 0;
@@ -192,6 +191,7 @@ header {
 
     .imgContainer {
       width: 100%;
+
       img {
         width: 100%;
       }
@@ -199,13 +199,14 @@ header {
 
     .infoContainer {
       padding: 1.7rem;
+
       .price {
         color: $cta-color;
         font-weight: 700;
         margin-bottom: 1.5rem;
         display: inline-block;
       }
-      
+
       .title {
         font-size: $fs-md;
         color: $dark-color-one;
@@ -213,7 +214,7 @@ header {
         margin-bottom: 1.25rem;
       }
 
-      > div:last-child {
+      >div:last-child {
         span {
           font-size: $fs-xs;
           color: $neutral-color-one;
@@ -245,15 +246,8 @@ header {
   }
 }
 
-button {
-  // @include ctaButton($cta-color-light, $cta-color, 1rem, 2rem);
+.ctaButton {
   display: block;
   margin: 0 auto;
-  &:hover {
-    a {
-      // color: $light-color-one;
-    }
-    // background-color: $heading-color-light;
-  }
 }
 </style>

@@ -25,16 +25,3 @@ body {
         local("Rossela"),
         url(./assets/fonts/Rossela-Demo.ttf) format("truetype");
 }
-
-// Buttons
-.ctaButton {
-    $spacingX: 2rem;
-    $spacingY: 1rem;
-    &.solid {
-        @include ctaButton ($cta-color, $light-color-one, $heading-color, $light-color-one, $spacingY, $spacingX);
-    }
-    
-    &.light {
-        @include ctaButton ($cta-color-light, $cta-color, $heading-color-light, $light-color-one, $spacingY, $spacingX);
-    }
-}

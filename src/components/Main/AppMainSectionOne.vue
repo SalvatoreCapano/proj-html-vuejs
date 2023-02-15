@@ -1,8 +1,11 @@
 <script>
 
+import AppCTAButton from '../AppCTAButton.vue'
+
 export default {
   name: 'AppMainSectionOne',
   components: {
+    AppCTAButton
   },
   data() {
     return {
@@ -98,11 +101,7 @@ export default {
             As an artist and an educator for nearly 30 years, I understand what it takes to create.
           </p>
 
-          <button class="ctaButton light">
-            <a href="#">
-              Get Started Today
-            </a>
-          </button>
+          <AppCTAButton :text="'get started today'" :type="'light'" />
 
         </div> <!-- /cta-->
 
@@ -153,6 +152,7 @@ section {
 header {
   text-align: center;
   margin-bottom: 2.5rem;
+
   .sectionTitle {
     @include sectionTitle;
     font-family: 'Rossela';
@@ -251,16 +251,6 @@ header {
       line-height: 1.8em;
       margin-bottom: 1.75rem;
     }
-
-    // button {
-    //   @include ctaButton ($cta-color-light, $cta-color, 1rem, 2rem);
-    //   &:hover {
-    //     a {
-    //       color: $light-color-one;
-    //     }
-    //     background-color: $heading-color-light;
-    //   }
-    // }
   }
 }
 

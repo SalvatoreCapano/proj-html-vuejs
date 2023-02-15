@@ -1,8 +1,12 @@
 <script>
 
+import AppCTAButton from '../AppCTAButton.vue'
 
 export default {
   name: 'AppHeaderCountdown',
+  components: {
+    AppCTAButton
+  },
   data() {
     const now = new Date();
     const dateToCount = new Date("Feb 17, 2023 18:30:00").getTime();
@@ -111,9 +115,7 @@ export default {
 
         </div> <!-- /countdown-->
 
-        <button class="ctaButton solid">
-          <a href="#">get ticket</a>
-        </button>
+      <AppCTAButton :text="'get ticket'" :type="'solid'" id="button" :isSmall="true"/>
 
       </div> <!-- /countdownContainer-->
 
@@ -149,10 +151,13 @@ p {
   }
 }
 
-.ctaButton {
+#button {
   margin-left: 40px;
-  a {
-    padding: 8px 32px !important;
-  }
+  // background-color: red !important;
+  // padding-top: 2rem !important;
+  // a {
+  //   padding: 8px 32px !important;
+  //   color: blue !important;
+  // }
 }
 </style>

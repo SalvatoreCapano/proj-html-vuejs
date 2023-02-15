@@ -1,7 +1,12 @@
 <script>
 
+import AppCTAButton from '../AppCTAButton.vue'
+
 export default {
   name: 'AppHeaderHero',
+  components: {
+    AppCTAButton
+  }
 }
 </script>
 
@@ -16,12 +21,8 @@ export default {
         <h1 class="sectionTitle">Hello, Im Martin</h1>
 
         <h2 class="sectionSubTitle">Artist Coaching And Mentoring <br> Might Be for You.</h2>
-        
-        <button class="ctaButton solid">
-          <a href="#">
-            get started today
-          </a>
-        </button>
+
+        <AppCTAButton :text="'get started today'" :type="'solid'" />
 
       </div> <!-- /textContainer-->
 
@@ -34,7 +35,7 @@ export default {
         <div class="canvas">
           <img src="../../assets/images/heroSection/artist-hero-image-01.jpg" alt="Painting">
         </div> <!-- /canvas-->
-        
+
         <div class="canvas">
           <img src="../../assets/images/heroSection/artist-hero-image-04.jpg" alt="Martin">
         </div> <!-- /canvas-->
@@ -55,7 +56,7 @@ section {
   margin-top: calc(2rem + 40px + 50px);
 
   background-color: $light-color-three;
-  background-image: 
+  background-image:
     url(../../assets/images/background/artist-hero-image-03.png),
     url(../../assets/images/background/artist-shape-03.png),
     url(../../assets/images/background/artist-shape-02.png),
@@ -66,7 +67,7 @@ section {
     url(../../assets/images/background/shape_01.svg),
     url(../../assets/images/background/shape_02.svg);
 
-  background-position: 
+  background-position:
     bottom 1rem left 26rem,
     top 75% left 20px,
     top 0 left,
@@ -81,6 +82,7 @@ section {
 
   background-repeat: no-repeat;
 }
+
 .container {
   @include flexRowSpaceBtwn;
   @include mainContainer;
@@ -133,10 +135,12 @@ section {
     top: 6rem;
     left: 5rem;
   }
+
   .canvas:nth-child(2) {
     bottom: 2.5rem;
     left: -5rem;
   }
+
   .canvas:last-child {
     bottom: 2.5rem;
     right: 0;

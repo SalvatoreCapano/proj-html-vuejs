@@ -1,15 +1,15 @@
 <script>
 
 import AppCTAButton from '../AppCTAButton.vue'
-import AppImageContainer from '../AppImageContainer.vue'
 import AppSectionHeading from '../AppSectionHeading.vue'
+import AppCardTypeOne from '../AppCardTypeOne.vue'
 
 export default {
   name: 'AppMainSectionThree',
   components: {
     AppCTAButton,
-    AppImageContainer,
-    AppSectionHeading
+    AppSectionHeading,
+    AppCardTypeOne
   },
   data() {
     return {
@@ -86,35 +86,17 @@ export default {
 
       <div class="cardsContainer">
 
-        <div class="card" v-for="item in coursesData">
-
-          <AppImageContainer :imgUrl="`../../src/assets/images/mainSection/mainSectionThree/${item.imgUrl}`" />
-
-          <div class="infoContainer">
-
-            <span class="price">
-              $ {{ item.price }}
-            </span>
-
-            <h4 class="title">
-              {{ item.title }}
-            </h4>
-
-            <div>
-              <span>
-                <font-awesome-icon icon="fa-regular fa-file-lines" class="icon" />
-                {{ item.lessons }} lessons
-              </span>
-
-              <span>
-                <font-awesome-icon icon="fa-regular fa-user" class="icon" />
-                {{ item.currentStudents }} Students
-              </span>
-            </div>
-
-          </div> <!-- /infoContainer-->
-
-        </div> <!-- /card-->
+        <AppCardTypeOne 
+          v-for="item in coursesData" 
+          :imgUrl="`../../src/assets/images/mainSection/mainSectionThree/${item.imgUrl}`" 
+          :tag="`$ ${ item.price }`"
+          :title="item.title"
+          :iconOne="'file-lines'"
+          :iconOneType="'regular'"
+          :secondaryInfoOne="`${item.lessons}`"
+          :iconTwo="'user'"
+          :secondaryInfoTwo="`${item.currentStudents} students`"
+          />
 
       </div> <!-- /cardsContainer-->
 
@@ -151,20 +133,6 @@ section {
   }
 }
 
-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-
-  .sectionTitle {
-    @include sectionTitle;
-    font-family: 'Rossela';
-  }
-
-  .sectionSubTitle {
-    @include sectionSubTitle;
-  }
-}
-
 .cardsContainer {
   @include flexRowCenterGap (1.5rem);
   align-items: flex-start;
@@ -172,61 +140,16 @@ header {
   margin-bottom: 2rem;
 
   .card {
-    width: calc((100% - 4.5rem) / 4);
-    flex-shrink: 0;
-    position: relative;
-
-    .imgContainer {
-      @include imageContainer;
-    }
+    width: calc((100% - 4.5rem) / 4) !important;
 
     .infoContainer {
-      padding: 1.7rem;
-
-      .price {
-        color: $cta-color;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        display: inline-block;
+      .tag {
+        color: $cta-color !important;
       }
 
-      .title {
-        font-size: $fs-md;
-        color: $dark-color-one;
-        font-weight: 600;
-        margin-bottom: 1.25rem;
-      }
-
-      >div:last-child {
-        span {
-          font-size: $fs-xs;
-          color: $neutral-color-one;
-
-          .icon {
-            margin-right: 5px;
-          }
-
-          &:first-child {
-            margin-right: 20px;
-          }
-        }
-      }
-    }
-
-    &:hover {
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        background-color: #bcbcbc35;
-        transition: all 0.05s;
-      }
     }
   }
+
 }
 
 .ctaButton {

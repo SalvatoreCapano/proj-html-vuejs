@@ -14,15 +14,7 @@ export default {
         subtitle: {
             type: String,
             default: 'Section Sub-title'
-        },
-        // type: {
-        //     type: String,
-        //     default: 'solid'
-        // },
-        // isSmall: {
-        //     type: Boolean,
-        //     default: false
-        // }
+        }
     }
 }
 </script>

@@ -41,17 +41,4 @@ section {
     max-width: 1700px;
   }
 }
-
-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  .sectionTitle {
-    @include sectionTitle;
-    font-family: 'Rossela';
-  }
-
-  .sectionSubTitle {
-    @include sectionSubTitle;
-  }
-}
 </style>

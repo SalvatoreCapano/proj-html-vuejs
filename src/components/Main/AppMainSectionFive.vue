@@ -2,12 +2,14 @@
 
 import AppImageContainer from '../AppImageContainer.vue'
 import AppSectionHeading from '../AppSectionHeading.vue'
+import AppCardTypeOne from '../AppCardTypeOne.vue'
 
 export default {
   name: 'AppMainSectionFive',
   components: {
     AppImageContainer,
-    AppSectionHeading
+    AppSectionHeading,
+    AppCardTypeOne
   },
   data() {
     return {
@@ -43,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section id="eventsSection">
     <div class="container small">
 
       <!-- Headings della sezione -->
@@ -53,40 +55,27 @@ export default {
 
       <div class="cardsContainer">
 
-        <div class="card" v-for="item in eventsData">
+        <AppCardTypeOne 
+          v-for="item in eventsData" 
+          :imgUrl="`../../src/assets/images/events/${item.imgUrl}`" 
+          :tag="`${ item.date }`"
+          :title="item.title"
+          :iconOne="'location-dot'"
+          :iconOneType="'solid'"
+          :secondaryInfoOne="`${item.location}`"
+          />
 
-          <AppImageContainer :imgUrl="`../../src/assets/images/events/${item.imgUrl}`" />
-
-          <div class="infoContainer">
-            <div class="date">
-              {{ item.date }}
-            </div>
-
-            <div class="title">
-              {{ item.title }}
-            </div>
-
-            <div class="location">
-              <font-awesome-icon icon="fa-solid fa-location-dot" class="icon" />
-              <span>
-                {{ item.location }}
-              </span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
+      </div> <!-- /cardsContainer-->
 
     </div> <!-- /container-->
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
-section {
+#eventsSection {
   padding: 4rem 0;
   background-color: $light-color-one;
   position: relative;
@@ -132,71 +121,33 @@ section {
   .container {
     padding: 0;
   }
-}
-
-header {
-  text-align: center;
-  margin-bottom: 4.5rem;
-
-  .sectionTitle {
-    @include sectionTitle;
-    font-family: 'Rossela';
+  
+  header {
+    margin-bottom: 4.5rem;
   }
-
-  .sectionSubTitle {
-    @include sectionSubTitle;
+  
+  .cardsContainer {
+    @include flexRowCenterGap(1rem);
+    gap: 4rem 1rem;
+    flex-wrap: wrap;
   }
-}
-
-.cardsContainer {
-  @include flexRowCenterGap(1rem);
-  gap: 4rem 1rem;
-  flex-wrap: wrap;
-}
-
-.card {
-  width: calc((100% - 1rem) / 2);
-  height: 300px;
-
-  display: flex;
-  align-items: center;
-
-  .imgContainer {
-    @include imageContainer;
-    width: unset;
-    height: 100%;
-  }
-
-  .infoContainer {
-    padding: 0 2rem;
-
-    .date {
-      color: $neutral-color-one;
-      font-weight: 500;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .title {
-      color: $dark-color-one;
-      line-height: 1.4em;
-      font-size: $fs-md;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .location {
-      color: $neutral-color-one;
-      font-size: $fs-xs;
-
-      .icon {
-        margin-right: 5px;
-      }
-    }
+  
+  .card {
+    width: calc((100% - 1rem) / 2) !important;
+    height: 300px;
+    
+    display: flex;
+    align-items: center;
+    
+    .imgContainer {
+      @include imageContainer;
+      width: unset;
+      height: 100% !important;
   }
 }
 
 .card:nth-child(n+3) {
   flex-direction: row-reverse;
+}
 }
 </style>

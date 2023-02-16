@@ -3,12 +3,14 @@ import { register } from 'swiper/element/bundle';
 register();
 
 import AppImageContainer from '../AppImageContainer.vue'
+import AppCardTypeOne from '../AppCardTypeOne.vue'
 
 export default {
 
   name: 'AppCarousel3D',
   components: {
-    AppImageContainer
+    AppImageContainer,
+    AppCardTypeOne
   },
   data() {
     return {
@@ -62,11 +64,11 @@ export default {
   <swiper-container 
     :loop="true" 
     :rewind="true" 
-    :slides-per-view="3" 
     :autoplay="{
       delay: 4000,
       disableOnInteraction: false,
     }" 
+    :slides-per-view="3" 
     :space-between="spaceBetween" 
     :centered-slides="true" 
     :breakpoints="{
@@ -78,34 +80,17 @@ export default {
     @slidechange="onSlideChange">
     <swiper-slide v-for="item in blogsData" class="slide">
 
-      <div class="slideInner">
-
-        <AppImageContainer :imgUrl="`../../src/assets/images/blog/${item.imgUrl}`" />
-
-        <div class="infoContainer">
-
-          <span class="tag">
-            {{ item.role }}
-          </span>
-
-          <h4 class="title">
-            {{ item.title }}
-          </h4>
-
-          <div>
-            <span>
-              <font-awesome-icon icon="fa-regular fa-calendar" class="icon" />
-              {{ item.date }}
-            </span>
-
-            <span>
-              <font-awesome-icon icon="fa-regular fa-eye" class="icon" />
-              {{ item.views }} views
-            </span>
-          </div>
-
-        </div> <!-- /infoContainer-->
-      </div> <!-- /slideInner-->
+      <!-- v-for="item in coursesData"  -->
+      <AppCardTypeOne 
+        :imgUrl="`../../src/assets/images/blog/${item.imgUrl}`" 
+        :tag="`${ item.role }`"
+        :title="item.title"
+        :iconOne="'calendar'"
+        :iconOneType="'regular'"
+        :secondaryInfoOne="`${item.date}`"
+        :iconTwo="'eye'"
+        :secondaryInfoTwo="`${item.views} views`"
+      />
 
     </swiper-slide>
 
@@ -114,7 +99,7 @@ export default {
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
@@ -123,50 +108,22 @@ export default {
 }
 // Slides standard
 .slide {
-  padding: 0 6.5rem;
   cursor: grab;
+  transition: all 0.2s;
 
-  .slideInner {
+  .card {
     transition: all 0.2s;
     box-shadow: 0px 8px 18px 2px #00000050;
     height: 420px;
-  }
 
-  .imgContainer {
-    @include imageContainer;
-    height: 55%;
-  }
+    flex-shrink: unset;
 
-  .infoContainer {
-    background-color: $light-color-one;
-    padding: 2rem 1rem;
-
-    .tag {
-      font-weight: 500;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: inline-block;
+    .imgContainer {
+      height: 55%;
     }
-
-    .title {
-      line-height: 1.4em;
-      font-size: $fs-md;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    >div:last-child {
-      span {
-        font-size: $fs-xs;
-        color: $neutral-color-one;
-
-        .icon {
-          margin-right: 5px;
-        }
-
-        &:first-child {
-          margin-right: 20px;
-        }
+    .infoContainer {
+      .tag {
+        font-size: $fs-md;
       }
     }
   }
@@ -174,16 +131,15 @@ export default {
 
 // Slides active
 .slide.swiper-slide-active {
-  padding: 0;
-  flex-grow: 1;
+  flex-grow: 1 !important;
 
-  .slideInner {
-    height: 700px;
-    width: 100%;
+  .card {
+    height: 700px !important;
+    width: 100% !important;
     position: relative;
 
     .imgContainer {
-      height: 100%;
+      height: 100% !important;
     }
 
     .infoContainer {
@@ -192,9 +148,9 @@ export default {
       left: 0;
       right: 0;
 
-      padding: 3rem 2rem;
+      padding: 3rem 1.25rem !important;
       z-index: 3;
-      background: none;
+      background: none !important;
 
       &::before {
         content: '';
@@ -230,7 +186,7 @@ export default {
 
 .swiper-slide-prev {
   transform: translateY(150px);
-  flex-basis: 30%;
+  flex-basis: 30% !important;
   padding-right: 1rem;
   padding-left: 0;
 }

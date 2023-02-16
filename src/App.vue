@@ -17,7 +17,7 @@ export default {
 
 <template>
 
-  <div class="wrapper" @scroll="onscroll">
+  <div class="wrapper">
 
     <AppHeader />
 
@@ -32,7 +32,4 @@ export default {
 
 <style lang="scss">
 @use './styles/main.scss' as *;
-.wrapper {
-  // padding: 0 1rem;
-}
 </style>

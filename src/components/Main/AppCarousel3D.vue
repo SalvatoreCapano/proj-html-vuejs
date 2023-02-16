@@ -61,7 +61,7 @@ export default {
 <template>
 
   <!-- :freeMode="true" -->
-  <swiper-container 
+  <swiper-container id="loopCarousel"
     :loop="true" 
     :rewind="true" 
     :autoplay="{
@@ -103,7 +103,7 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
-.swiper-initialized {
+#loopCarousel.swiper-initialized {
   height: 700px;
 }
 // Slides standard

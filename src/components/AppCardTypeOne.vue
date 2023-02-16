@@ -120,8 +120,7 @@ export default {
 
         >div:last-child {
             span {
-                font-size: $fs-xs;
-                color: $neutral-color-one;
+                @include secondaryText;
 
                 .icon {
                     margin-right: 5px;

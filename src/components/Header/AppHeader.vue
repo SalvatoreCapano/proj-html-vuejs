@@ -19,7 +19,7 @@ export default {
 
   <header>
 
-    <div class="stickyHeader">
+    <div class="fixedHeader">
 
       <!-- countdown -->
       <AppHeaderCountdown />
@@ -27,7 +27,7 @@ export default {
       <!-- navbar -->
       <AppHeaderNavbar />
 
-    </div> <!-- /stickyHeader-->
+    </div> <!-- /fixedHeader-->
     
     <!-- hero section -->
     <AppHeaderHero />
@@ -37,7 +37,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.stickyHeader {
+.fixedHeader {
   position: fixed;
   top: 0;
   left: 0;

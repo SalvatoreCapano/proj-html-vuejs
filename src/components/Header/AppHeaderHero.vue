@@ -85,7 +85,7 @@ section {
 .container {
   @include flexRowSpaceBtwn;
   @include mainContainer ($mainContainerWidth);
-  // padding: 1.25rem 0;
+
   position: relative;
   height: 75vh;
   
@@ -95,9 +95,6 @@ section {
 
   .textContainer {
     text-align: center;
-    // margin: 0 auto;
-    
-    // padding: 12rem 0;
 
     isolation: isolate;
     z-index: 2;
@@ -106,7 +103,6 @@ section {
 
 .sectionTitle {
   @include sectionTitle;
-  font-family: 'Rossela';
   font-size: 3.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem

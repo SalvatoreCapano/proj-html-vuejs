@@ -19,7 +19,6 @@ export default {
     }
   },
   methods: {
-    // COUNTDOWN DA RIVEDERE
     startCountdown() {
 
       this.days = Math.floor(this.difference / (1000 * 60 * 60 * 24));
@@ -109,8 +108,7 @@ export default {
           <span>{{ calcMinutes }}</span>
           :
           <span>
-            <span v-if="(this.seconds >= 0) && (this.seconds < 10)">0</span>
-            {{ this.seconds }}
+            <span v-if="(this.seconds >= 0) && (this.seconds < 10)">0</span>{{ this.seconds }}
           </span>
 
         </div> <!-- /countdown-->

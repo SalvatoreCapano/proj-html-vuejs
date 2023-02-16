@@ -148,6 +148,9 @@ export default {
 
 .card:nth-child(n+3) {
   flex-direction: row-reverse;
+  .infoContainer {
+    text-align: right;
+  }
 }
 }
 </style>

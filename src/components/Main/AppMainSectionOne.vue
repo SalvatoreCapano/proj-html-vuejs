@@ -77,7 +77,7 @@ export default {
           <span>
             Martin Garrix
           </span>
-        </div>
+        </div> <!-- /quote-->
 
         <div class="cta">
 

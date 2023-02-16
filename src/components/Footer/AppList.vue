@@ -54,9 +54,8 @@ ul {
     margin-bottom: 0.75rem;
 
     a {
+      @include secondaryText;
       text-decoration: none;
-      color: $neutral-color-one;
-      font-size: $fs-xs;
       font-weight: 500;
       transition: color 0.1s;
 

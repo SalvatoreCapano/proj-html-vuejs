@@ -104,7 +104,7 @@ export default {
 @use '../../styles/partials/mixins.scss' as *;
 
 #loopCarousel.swiper-initialized {
-  height: 700px;
+  height: 600px;
 }
 // Slides standard
 .slide {
@@ -114,14 +114,15 @@ export default {
   .card {
     transition: all 0.2s;
     box-shadow: 0px 8px 18px 2px #00000050;
-    height: 420px;
+    height: 100%;
 
     flex-shrink: unset;
 
     .imgContainer {
-      height: 55%;
+      height: 60%;
     }
     .infoContainer {
+      height: 40%;
       .tag {
         font-size: $fs-md;
       }
@@ -134,7 +135,7 @@ export default {
   flex-grow: 1 !important;
 
   .card {
-    height: 700px !important;
+    height: 100% !important;
     width: 100% !important;
     position: relative;
 
@@ -143,6 +144,7 @@ export default {
     }
 
     .infoContainer {
+      height: unset;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -151,6 +153,7 @@ export default {
       padding: 3rem 1.25rem !important;
       z-index: 3;
       background: none !important;
+      transition: all 0.1s;
 
       &::before {
         content: '';
@@ -185,17 +188,12 @@ export default {
 }
 
 .swiper-slide-prev {
-  transform: translateY(150px);
-  flex-basis: 30% !important;
-  padding-right: 1rem;
-  padding-left: 0;
+  transform: scale(0.7) translateY(-150px) !important;
+  transform-origin: bottom left;
 }
 
 .swiper-slide-next {
-  transform: translateY(40px);
-  flex-basis: 30%;
-  padding-left: 1rem;
-  padding-right: 0;
-  margin-right: 0 !important;
+  transform: scale(0.7) translateY(75px) !important;
+  transform-origin: top right;
 }
 </style>

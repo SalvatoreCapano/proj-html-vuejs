@@ -1,5 +1,7 @@
 <script>
 
+import { store } from '../../store';
+
 export default {
   name: 'AppHeaderNavbar',
   data() {
@@ -59,7 +61,18 @@ export default {
           name: 'linkedin',
           link: 'https://www.linkedin.com/'
         }
-      ]
+      ],
+      store
+    }
+  },
+  methods: {
+    blockMenuMobile() {
+      if (store.menuOpen == false) {
+        document.documentElement.style.overflow = "auto"
+      }
+      else {
+        document.documentElement.style.overflow = "hidden"
+      }
     }
   }
 }
@@ -67,7 +80,6 @@ export default {
 
 
 <template>
-
   <section>
     <div class="container large">
 
@@ -79,7 +91,11 @@ export default {
 
       </div> <!-- /logoContainer-->
 
-      <nav>
+      <font-awesome-icon icon="fa-solid fa-bars" id="menuBtn"
+        @click="(store.menuOpen = !store.menuOpen), blockMenuMobile()" />
+
+      <!-- <nav class="navbar"> -->
+      <nav class="navbar" :class="(store.menuOpen) ? ('active') : ('')">
         <ul>
 
           <li v-for="item in this.navbarItems">
@@ -90,23 +106,22 @@ export default {
           </li>
 
         </ul>
-      </nav>
+      </nav> <!-- /navbar-->
 
-      <div class="socialLinks">
+      <nav class="socialLinks">
         <ul>
 
           <li v-for="item in this.socialLinks">
             <a :href="item.link" target="_blank">
-              <font-awesome-icon :icon="`fa-brands fa-${item.name}`" class="icon"/>
+              <font-awesome-icon :icon="`fa-brands fa-${item.name}`" class="icon" />
             </a>
           </li>
 
         </ul>
-      </div> <!-- /socialLinks-->
+      </nav> <!-- /socialLinks-->
 
     </div> <!-- /container-->
   </section>
-
 </template>
 
 
@@ -114,16 +129,96 @@ export default {
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
+// Responsive | Mobile First
+#menuBtn {
+  font-size: 1.5rem;
+  color: $dark-color-one;
+
+  padding: 5px 0px 5px 10px;
+  cursor: pointer;
+  transition: color 0.1s;
+
+  &:active {
+    color: $neutral-color-one;
+  }
+}
+
+@media screen and (max-width:960px) {
+  .navbar {
+    width: 100%;
+    height: calc(100vh - 76px);
+    height: calc(100svh - 76px);
+  
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    transition: right 0.2s;
+  
+    ul {
+      list-style: none;
+      height: 100%;
+  
+      display: flex;
+      flex-direction: column;
+  
+      background-color: $light-color-three;
+  
+      li {
+        flex-grow: 1;
+        flex-shrink: 1;
+  
+        max-height: 75px;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        a {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 2.5rem;
+  
+          color: $dark-color-one;
+          text-decoration: none;
+          text-transform: capitalize;
+  
+          &:active {
+            color: $neutral-color-one;
+          }
+        }
+  
+        &:hover {
+          background-color: $light-color-two;
+        }
+      }
+    }
+    &.active {
+      right: 0;
+    }
+  }
+
+}
+
+
+.socialLinks {
+  display: none;
+}
+
 section {
   background-color: $light-color-one;
+  position: relative;
+
+  .container {
+    @include flexRowSpaceBtwn;
+    padding: 1rem 0;
+  }
 }
-.container {
-  @include flexRowSpaceBtwn;
-  padding: 1rem 0;
-}
+
+
 .logoContainer {
   height: 40px;
-  
+
   a {
     display: inline-block;
     height: 100%;
@@ -136,44 +231,59 @@ section {
   }
 }
 
-nav, .socialLinks {
-  ul {
-    @include flexRowCenterGap ($spacing-medium);
-    list-style: none;
+@media screen and (min-width:960px) {
 
-    li a {
-      color: $dark-color-one;
-      text-decoration: none;
-      text-transform: capitalize;
-      transition: 0.1s;
+  #menuBtn {
+    display: none
+  }
 
-      &:hover {
-        color: $hover-color;
-      }
+  .navbar,
+  .socialLinks {
+    position: static;
 
-      &:active {
-        color: $active-color;
+    ul {
+      @include flexRowCenterGap ($spacing-medium);
+      list-style: none;
+
+      li a {
+        color: $dark-color-one;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: 0.1s;
+
+        &:hover {
+          color: $hover-color;
+        }
+
+        &:active {
+          color: $active-color;
+        }
       }
     }
   }
-}
 
-nav ul li a {
+  .navbar ul li a {
 
-  > * {
-    vertical-align: middle;
+    >* {
+      vertical-align: middle;
+    }
+
+    span {
+      margin-right: 5px;
+      font-size: $fs-s;
+    }
+
+    .icon {
+      font-size: 0.5em;
+    }
   }
 
-  span {
-    margin-right: 5px;
-    font-size: $fs-s;
-  }
-  .icon {
-    font-size: 0.5em;
-  }
-}
+  .socialLinks {
+    display: block;
 
-.socialLinks ul li a {
-  font-size: 1rem;
+    ul li a {
+      font-size: 1rem;
+    }
+  }
 }
 </style>

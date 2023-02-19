@@ -9,11 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faClock, faFileLines, faUser, faCalendar, faEye } from '@fortawesome/free-regular-svg-icons'
-import { faChevronDown, faArrowRight, faArrowRightLong, faArrowUpLong, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faArrowRight, faArrowRightLong, faArrowUpLong, faLocationDot, faBars } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 /* add icons to the library */
-library.add(faChevronDown, faTwitter, faFacebookF, faInstagram, faLinkedin, faClock, faFileLines, faUser, faArrowRight, faArrowRightLong, faCalendar, faEye, faLocationDot, faArrowUpLong)
+library.add(faChevronDown, faTwitter, faFacebookF, faInstagram, faLinkedin, faClock, faFileLines, faUser, faArrowRight, faArrowRightLong, faCalendar, faEye, faLocationDot, faArrowUpLong, faBars)
 
 // import Swiper JS
 import Swiper, { Navigation, Pagination } from 'swiper';

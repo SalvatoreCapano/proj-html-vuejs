@@ -34,3 +34,7 @@ body {
         @include mainContainer ($mainContainerWidth);
     }
 }
+
+section {
+    padding: 0 1rem;
+}

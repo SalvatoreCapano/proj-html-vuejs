@@ -9,7 +9,7 @@ export default {
   },
   data() {
     const now = new Date();
-    const dateToCount = new Date("Feb 17, 2023 18:30:00").getTime();
+    const dateToCount = new Date("Dec 25, 2023 18:30:00").getTime();
     return {
       difference: dateToCount - now,
       days: undefined,
@@ -89,7 +89,6 @@ export default {
 
 
 <template>
-
   <section>
     <div class="container small">
 
@@ -113,13 +112,12 @@ export default {
 
         </div> <!-- /countdown-->
 
-      <AppCTAButton :text="'get ticket'" :type="'solid'" id="button" :isSmall="true"/>
+        <AppCTAButton :text="'get ticket'" :type="'solid'" id="button" :isSmall="true" />
 
       </div> <!-- /countdownContainer-->
 
     </div> <!-- /container-->
-  </section>
-
+</section>
 </template>
 
 
@@ -128,33 +126,36 @@ export default {
 @use '../../styles/partials/mixins.scss' as *;
 
 section {
-  background-color: $light-color-two;
+  display: none;
 }
 
-.container {
-  @include flexRowCenterGap ($spacing-medium);
-  padding: 0.5rem 0
-}
-
-p {
-  @include secondaryText;
-}
-.countdownContainer {
-  @include flexRowCenterGap (10px);
-  color: $dark-color-one;
-
-  .countdown {
-    font-weight: 700;
+// Responsive | Mobile First
+@media screen and (min-width: 960px) {
+  section {
+    display: block;
+    background-color: $light-color-two;
   }
-}
 
-#button {
-  margin-left: 40px;
-  // background-color: red !important;
-  // padding-top: 2rem !important;
-  // a {
-  //   padding: 8px 32px !important;
-  //   color: blue !important;
-  // }
+  .container {
+    @include flexRowCenterGap ($spacing-medium);
+    padding: 0.5rem 0
+  }
+
+  p {
+    @include secondaryText;
+  }
+
+  .countdownContainer {
+    @include flexRowCenterGap (10px);
+    color: $dark-color-one;
+
+    .countdown {
+      font-weight: 700;
+    }
+  }
+
+  #button {
+    margin-left: 40px;
+  }
 }
 </style>

@@ -32,4 +32,7 @@ export default {
 
 <style lang="scss">
 @use './styles/main.scss' as *;
+// .wrapper.menuMobileOpen {
+//   overflow: hidden;
+// }
 </style>
